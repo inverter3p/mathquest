@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quest Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 1. Character Selection Screen -->
+        <div id="character-selection">
+            <h1>Choose Your Hero!</h1>
+            <input type="text" id="player-name-input" placeholder="Enter Your Name" maxlength="12">
+            <div class="character-options">
+                <button class="char-btn" data-char="🤖">🤖</button>
+                <button class="char-btn" data-char="🦖">🦖</button>
+                <button class="char-btn" data-char="🦸">🦸</button>
+            </div>
+        </div>
+
+        <!-- 2. Main Game Screen (hidden initially) -->
+        <div id="game-screen" class="hidden">
+            <div id="game-header">
+                <h2 id="player-name-display">Hero</h2>
+                <div class="game-info">
+                    <div class="score-display">Score: <span id="score">0</span></div>
+                    <button id="restart-btn">Restart</button>
+                </div>
+            </div>
+            <div id="game-board"></div>
+            <div class="instructions">Use <strong>Arrow Keys</strong> or <strong>Touch Controls</strong> to move!</div>
+        </div>
+
+        <!-- 3. Quiz Modal (hidden initially) -->
+        <div id="quiz-modal" class="hidden">
+            <div id="quiz-content">
+                <p id="question-text"></p>
+                <div id="answer-options"></div>
+                <p id="feedback-message"></p>
+            </div>
+        </div>
+
+        <!-- 4. End Game Modal (hidden initially) -->
+        <div id="end-game-modal" class="hidden">
+            <div id="end-game-content">
+                <h1 id="end-game-title"></h1>
+                <p id="end-game-message"></p>
+                <p class="final-score-display">Final Score: <span id="final-score">0</span></p>
+                <button id="play-again-btn">Play Again</button>
+            </div>
+        </div>
+
+        <!-- 5. On-Screen Touch Controls (Initially hidden by CSS) -->
+        <!-- THE FIX: The touch controls now live INSIDE the game container -->
+        <div id="touch-controls">
+            <button class="d-pad" id="touch-up" data-direction="ArrowUp">&uarr;</button>
+            <button class="d-pad" id="touch-left" data-direction="ArrowLeft">&larr;</button>
+            <button class="d-pad" id="touch-right" data-direction="ArrowRight">&rarr;</button>
+            <button class="d-pad" id="touch-down" data-direction="ArrowDown">&darr;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
